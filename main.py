@@ -13,7 +13,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import GaussianNB
 
 # Charger les données
-data = load_data('C:/Users/baye.niang/Documents/PROJET-AGRICULTURE/aggriculturepredictionIA.csv')
+data = load_data('aggriculturepredictionIA.csv')
 
 # Vérifier les valeurs manquantes
 print(check_null_values(data))
