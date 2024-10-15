@@ -7,7 +7,7 @@ from data_preprocessing import load_data, standardize_data
 from prediction import predict_new_observation
 
 # Titre de l'application
-st.title("Aide a la prise de decision de la Cultures Agricoles")
+st.title("Aide a la prise de decision de la Cultures Agricoles par ACCEL TECH")
 
 # Charger le modèle
 model = joblib.load("best_model.pkl")
@@ -28,8 +28,8 @@ if st.sidebar.button("Prédire"):
     observation = [N, P, K, temperature, humidity, ph, rainfall]
     
     # Standardiser l'observation
-    train_mean = pd.Series([87, 35, 25, 21.44, 63.16, 6.17, 65.88])  # Moyenne d'entraînement
-    train_std = pd.Series([10, 10, 10, 5, 10, 1, 20])  # Écart type d'entraînement
+    train_mean = pd.Series([67.68, 39.07, 36.99, 26.82, 79.63, 6.38, 105.27])  # Moyenne d'entraînement
+    train_std = pd.Series([34.81, 23.10, 15.28, 5.62, 14.69, 0.59, 64.57])  # Écart type d'entraînement
     y_pred = predict_new_observation(model, observation, train_mean, train_std)
     
     # Afficher le résultat
