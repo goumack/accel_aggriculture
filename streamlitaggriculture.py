@@ -6,20 +6,22 @@ import joblib
 from data_preprocessing import load_data, standardize_data
 from prediction import predict_new_observation
 
+
+st.image("photo.png", width=100)
 # Titre de l'application
-st.title("Aide a la prise de decision de la Cultures Agricoles par ACCEL TECH")
+st.title("Aide a la prise de decision des Cultures Agricoles par ACCEL TECH")
 
 # Charger le modèle
 model = joblib.load("best_model.pkl")
 
 # Entrée de l'utilisateur
 st.sidebar.header("Paramètres d'entrée")
-N = st.sidebar.number_input("Nitrogen content (kg/ha)", min_value=0.0, max_value=200.0, value=67.68)
-P = st.sidebar.number_input("Phosphorous content (kg/ha)", min_value=0.0, max_value=200.0, value=39.07)
-K = st.sidebar.number_input("Potassium content (kg/ha)", min_value=0.0, max_value=200.0, value=36.99)
+N = st.sidebar.number_input("Nitrogen  (kg/ha)", min_value=0.0, max_value=200.0, value=67.68)
+P = st.sidebar.number_input("Phosphorous  (kg/ha)", min_value=0.0, max_value=200.0, value=39.07)
+K = st.sidebar.number_input("Potassium  (kg/ha)", min_value=0.0, max_value=200.0, value=36.99)
 temperature = st.sidebar.number_input("Temperature (°C)", min_value=0.0, max_value=50.0, value=26.82)
 humidity = st.sidebar.number_input("Humidity (%)", min_value=0.0, max_value=100.0, value=79.63)
-ph = st.sidebar.number_input("Soil pH", min_value=0.0, max_value=14.0, value=6.387)
+ph = st.sidebar.number_input("pH du sol", min_value=0.0, max_value=14.0, value=6.387)
 rainfall = st.sidebar.number_input("Rainfall (mm)", min_value=0.0, max_value=500.0, value=105.27)
 
 # Créer un bouton pour prédire
@@ -34,4 +36,7 @@ if st.sidebar.button("Prédire"):
     
     # Afficher le résultat
     st.write(f"La culture prédite est : {y_pred[0]}")
+
+    st.image("banner.png", width=200)
+
 
