@@ -9,7 +9,7 @@ from prediction import predict_new_observation
 
 st.image("photo.png", width=100)
 # Titre de l'application
-st.title("Aide a la prise de decision des Cultures Agricoles par ACCEL TECH")
+st.title("Aide a la prise de decision des cultures Agricoles par ACCEL TECH")
 
 # Charger le modèle
 model = joblib.load("best_model.pkl")
